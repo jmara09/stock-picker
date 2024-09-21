@@ -3,7 +3,7 @@ def stock_picker(prices)
   temp_days = [0,1]
   
   prices.each_with_index do |price,idx| 
-    if price < prices[days[0]] || price < prices[days[1]]
+    if price < prices[days[0]]
       days[0] = idx
       days[1] = idx
     elsif price > prices[days[1]] && idx > days[0]
@@ -23,7 +23,7 @@ end
 
 
 stock_picker([15,3,20,9,15,8,50,1,5])
-# => [5,6]
+# => [1,6]
 
 stock_picker([17,3,6,9,15,8,6,1,10])
 # => [1,4]
